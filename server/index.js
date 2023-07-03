@@ -30,7 +30,7 @@ app.post("/send", (req, res) => {
   //const msgHashUint8 = Uint8Array.from(Object.values(msgHash));
   //console.log(msgHashUint8);
 
-  console.log(msgHash);
+  //console.log(msgHash);
 
   // Create a new Signature instance from the serialized signature
   const { r, s , recovery } = signatureSerialized;
@@ -39,12 +39,12 @@ app.post("/send", (req, res) => {
 
   // Recover the public key from the signature
   const recoverPublicKey = signatureInstance.recoverPublicKey(msgHash);
-  console.log(recoverPublicKey);
+  //console.log(recoverPublicKey);
  
   // Compress the public key
   const publicKey = recoverPublicKey.toHex(true);
 
-  console.log("public key:" + publicKey);
+  //console.log("public key:" + publicKey);
 
  
   const address = toHex(keccak256(hexToBytes(publicKey.slice(2))).slice(-20));
