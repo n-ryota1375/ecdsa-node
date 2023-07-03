@@ -13,4 +13,3 @@ console.log("public key:" + toHex(publicKey));
 const address = keccak256(publicKey.slice(1)).slice(-20);;
 
 console.log("address:" + toHex(address));
-
